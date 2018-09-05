@@ -59,9 +59,9 @@ var OPTREES = {
 
 function evalTree(tree, text) {
   if (!Array.isArray(tree)) {
-    //return text.toLowerCase().indexOf(tree.toLowerCase()) >= 0;
+    return text.indexOf(tree) >= 0;
     // TODO: cache these regexps?
-    return new RegExp("\\b"+tree+"\\b", "i").test(text);
+    //return new RegExp("\\b"+tree+"\\b", "i").test(text);
   }
   var op = tree[0];
   if (op == 'OR') {
